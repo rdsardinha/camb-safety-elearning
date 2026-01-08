@@ -12,16 +12,18 @@
 /* !Colours                           */
 /**************************************/
 
-$primary: #007064;
-$secondary: #324a46;
-$tertiary: #c9e3e1;
+$primary: #159d45;
+$secondary: #2e6a32;
+$tertiary: #3f3e3e;
 
-$nhs-blue: #005EB8;
+$grey: #efefef;
+$highlight: #e8f5ec;
+
+$nhs-blue: #005eb8;
 $midtown: #5e9892;
-$grey: #f5f5f5;
 $gold: #d0b776;
-$highlight-red: #d96c5d;
 
+$highlight-red: #d96c5d;
 $white: #ffffff;
 $black: #000000;
 
@@ -123,16 +125,18 @@ $transition-timing: ease-in-out;
 /**************************************/
 
 :root {
-	--primary: #007064;
-	--secondary: #324a46;
-	--tertiary: #c9e3e1;
+	--primary: #159d45;
+	--secondary: #2e6a32;
+	--tertiary: #3f3e3e;
 
-	--nhs-blue: #005EB8;
+	--grey: #efefef;
+	--highlight: #e8f5ec;
+
+	--nhs-blue: #005eb8;
 	--midtown: #5e9892;
-	--grey: #f5f5f5;
 	--gold: #d0b776;
-	--highlight-red: #d96c5d;
 
+	--highlight-red: #d96c5d;
 	--white: #ffffff;
 	--black: #000000;
 
@@ -140,7 +144,7 @@ $transition-timing: ease-in-out;
 	--bg-primary-opacity: rgba(0, 112, 100, 0.8);
 	--bg-white-opacity: rgba(255, 255, 255, 0.2);
 
-	--bs-body-font-size: 0.875rem!important;
+	--bs-body-font-size: 0.875rem !important;
 
 	--spacer: 5rem;
 	--spacer-sm: 2rem;
