@@ -1,0 +1,13 @@
+{
+	"name": "acf/mega-menu",
+	"title": "Mega Menu",
+	"description": "",
+	"category": "widgets",
+	"icon": "tide",
+	"keywords": ["mega menu"],
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "mega-menu.php"
+	},
+	"align": "full"
+}

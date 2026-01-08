@@ -1,0 +1,283 @@
+/*
+* Use existing Bootstrap 4/5 classes and
+* variables to extend - override CF7 style
+*
+* Useful CF7 classes:
+* .wpcf7 the wrapper element
+* .wpcf7-form
+* .wpcf7-form-control
+* .wpcf7-text
+* .wpcf7-email
+* .wpcf7-textarea
+* .wpcf7-submit
+*/
+
+// keep a max width in case it is just the form and nothing else
+// we do not want a form spanning whole page
+.wpcf7 {
+	max-width: 100%;
+	margin: 0 auto !important;
+
+	// all inputs except radios and checkboxes inherit from form-control
+	input[type="text"],
+	input[type="search"],
+	input[type="url"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"],
+	input[type="email"],
+	input[type="file"],
+	input[type="submit"],
+	select,
+	textarea {
+		@extend .form-control;
+		background-color: var(--white);
+		border-radius: 5px;
+		color: var(--primary);
+	}
+
+	// submit button, inherit .btn and .btn-outline-primary classes.
+	input[type="submit"] {
+		@extend .btn;
+		@extend .btn-outline-primary;
+	}
+
+	.wpcf7-form {
+		// set paragraphs to behave like divs with class .form-group
+		p {
+			@extend .form-group !optional;
+			margin-bottom: $spacer; // Replicates the .form-group functionality in BS5.
+		}
+
+		// let labels be 100%
+		label {
+			width: 100%;
+		}
+	}
+
+	// not valid tip for each control
+	.wpcf7-not-valid-tip {
+		color: var(--gold);
+		margin-bottom: 0.5rem;
+		padding-left: 1rem;
+	}
+
+	// validation errors ourput bottom of form
+	.wpcf7-validation-errors {
+		@extend .form-control;
+		color: var(--secondary);
+		border: 1px solid $gray-200;
+		font-weight: $font-weight-bold;
+	}
+}
+
+.wpcf7 .submit-button {
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+
+	@include media-breakpoint-down(xl) {
+		display: block;
+	}
+}
+
+.form-control,
+.wpcf7 input[type="text"],
+.wpcf7 input[type="search"],
+.wpcf7 input[type="url"],
+.wpcf7 input[type="tel"],
+.wpcf7 input[type="number"],
+.wpcf7 input[type="range"],
+.wpcf7 input[type="date"],
+.wpcf7 input[type="month"],
+.wpcf7 input[type="week"],
+.wpcf7 input[type="time"],
+.wpcf7 input[type="datetime"],
+.wpcf7 input[type="datetime-local"],
+.wpcf7 input[type="color"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="file"],
+.wpcf7 input[type="submit"],
+.wpcf7 select,
+.wpcf7 textarea,
+.wpcf7 .wpcf7-validation-errors {
+	border: 0;
+	background-color: var(--white);
+	color: var(--black);
+	border-radius: 10px;
+	height: 60px;
+	font-size: 0.875rem;
+	margin-bottom: 0.25rem;
+	font-weight: $font-weight-regular;
+}
+
+.wpcf7 select:hover {
+	cursor: pointer;
+}
+
+.wpcf7 textarea {
+	height: 276px !important;
+	padding: 0.55rem 1rem;
+}
+
+/* Style the file input field itself */
+input.wpcf7-file.uploaded-file {
+	padding: 9px 15px;
+}
+
+/* Remove ugly default button styling on some browsers */
+input[type="file"]::file-selector-button {
+	background-color: var(--primary) !important;
+	color: var(--white) !important;
+	border: none !important;
+	height: 60px;
+}
+
+/* Select Dropdown fields */
+.selection .select2-selection--single {
+	border: 0;
+	background-color: transparent;
+	color: var(--primary);
+	border-radius: 5px;
+	height: 40px;
+	font-size: 1rem;
+}
+
+.contact-select {
+	appearance: none;
+}
+
+.contact-select-col span {
+	position: relative;
+
+	&::after {
+		@extend %font-icon;
+		content: "\e908";
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: var(--primary);
+		font-size: 0.4rem;
+		pointer-events: none;
+	}
+}
+
+/* custom checkbox styling for contact form 7 checkbox */
+span.wpcf7-list-item {
+	display: inline-block;
+	margin: 0;
+}
+
+.wpcf7 .wpcf7-form label {
+	display: flex;
+	column-gap: 10px;
+}
+
+.wpcf7 .wpcf7-list-item {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.wpcf7-checkbox {
+	display: flex;
+}
+
+// .acceptance.wpcf7-checkbox {
+// 	margin-bottom: 0.5rem;
+// }
+
+.contact-form-block .acceptance.wpcf7-checkbox {
+	margin: 0.5rem 0;
+}
+
+.contact-us-block .acceptance .wpcf7-list-item-label {
+	margin-top: 4px;
+
+	@include media-breakpoint-down(xxl) {
+		white-space: normal;
+	}
+}
+
+.contact-us-block .acceptance .wpcf7-list-item-label,
+.newsletter-block .acceptance .wpcf7-list-item-label {
+	font-size: 0.8rem;
+
+	a {
+		color: var(--white);
+		text-decoration: underline;
+	}
+}
+
+.wpcf7-checkbox label {
+	position: relative;
+	cursor: pointer;
+}
+
+.wpcf7-checkbox input[type="checkbox"] {
+	position: absolute;
+	visibility: hidden;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	left: 0;
+}
+
+.wpcf7-checkbox input[type="checkbox"] + span:before {
+	display: block;
+	position: absolute;
+	content: "";
+	border-radius: 6px;
+	height: 25px;
+	width: 25px;
+	top: 0px;
+	left: 0px;
+	background-color: #fff;
+	border: 1px solid #999;
+}
+
+.wpcf7-checkbox input[type="checkbox"] + span:after {
+	display: block;
+	position: absolute;
+	content: "\2713";
+	height: 25px;
+	width: 25px;
+	top: -2px;
+	left: 0px;
+	visibility: hidden;
+	font-size: 20px;
+	text-align: center;
+}
+
+.wpcf7-checkbox input[type="checkbox"]:checked + span:after {
+	visibility: visible;
+	color: var(--primary);
+}
+
+.wpcf7-list-item-label {
+	margin-left: 35px;
+	color: var(--white);
+}
+
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output,
+.wpcf7 form.payment-required .wpcf7-response-output {
+	border-color: var(--secondary);
+	color: var(--white);
+	background-color: var(--secondary);
+	text-align: center;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+	border-color: var(--primary);
+	color: var(--white);
+	background-color: var(--primary);
+	text-align: center;
+}

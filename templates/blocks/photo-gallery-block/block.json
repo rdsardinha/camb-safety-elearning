@@ -1,0 +1,13 @@
+{
+	"name": "acf/photo-gallery",
+	"title": "Photo Gallery",
+	"description": "",
+	"category": "widgets",
+	"icon": "tide",
+	"keywords": ["gallery", "photo gallery", "gallery"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "photo-gallery.php"
+	},
+	"align": "full"
+}

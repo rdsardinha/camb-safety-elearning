@@ -1,0 +1,13 @@
+{
+	"name": "acf/patients-block",
+	"title": "Patients Block",
+	"description": "",
+	"category": "widgets",
+	"icon": "text-page",
+	"keywords": ["patients", "block"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "patients-block.php"
+	},
+	"align": "full"
+}

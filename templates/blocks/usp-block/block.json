@@ -1,0 +1,13 @@
+{
+	"name": "acf/usp-block",
+	"title": "USP",
+	"description": "USP Narrow slider",
+	"category": "widgets",
+	"icon": "text-page",
+	"keywords": ["usp", "slider"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "usp-block.php"
+	},
+	"align": "full"
+}

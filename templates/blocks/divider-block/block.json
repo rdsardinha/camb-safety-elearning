@@ -1,0 +1,13 @@
+{
+	"name": "acf/divider-block",
+	"title": "Divider Line",
+	"description": "Choose a divider line full width or not and its colour",
+	"category": "widgets",
+	"icon": "text-page",
+	"keywords": ["divider", "line", "separator"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "divider-block.php"
+	},
+	"align": "full"
+}

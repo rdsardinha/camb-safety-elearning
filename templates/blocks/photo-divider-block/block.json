@@ -1,0 +1,13 @@
+{
+	"name": "acf/photo-divider",
+	"title": "Photo Divider",
+	"description": "",
+	"category": "widgets",
+	"icon": "tide",
+	"keywords": ["divider", "photo divider"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "photo-divider.php"
+	},
+	"align": "full"
+}

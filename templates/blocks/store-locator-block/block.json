@@ -1,0 +1,13 @@
+{
+	"name": "acf/store-locator-block",
+	"title": "Store Locator Block",
+	"description": "Block that shows store locator",
+	"category": "widgets",
+	"icon": "location",
+	"keywords": ["locator", "location", "store", "stores"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "store-locator-block.php"
+	},
+	"align": "full"
+}

@@ -1,0 +1,13 @@
+{
+	"name": "acf/logo-block",
+	"title": "Logo Block",
+	"description": "",
+	"category": "widgets",
+	"icon": "text-page",
+	"keywords": ["logo", "carousel", "slider"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "logo-block.php"
+	},
+	"align": "full"
+}

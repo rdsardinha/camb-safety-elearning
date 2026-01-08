@@ -1,0 +1,13 @@
+{
+	"name": "acf/advert-cta",
+	"title": "Advert CTA",
+	"description": "",
+	"category": "widgets",
+	"icon": "tide",
+	"keywords": ["advert", "advert cta", "cta"],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "advert-cta.php"
+	},
+	"align": "full"
+}

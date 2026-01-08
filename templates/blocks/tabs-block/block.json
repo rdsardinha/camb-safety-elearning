@@ -1,0 +1,13 @@
+{
+	"name": "acf/tabs-block",
+	"title": "Tabs Block",
+	"description": "",
+	"category": "widgets",
+	"icon": "text-page",
+	"keywords": ["tabs", "block"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "tabs-block.php"
+	},
+	"align": "full"
+}

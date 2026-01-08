@@ -1,0 +1,13 @@
+{
+	"name": "acf/advert-feature",
+	"title": "Advert Feature",
+	"description": "",
+	"category": "widgets",
+	"icon": "tide",
+	"keywords": ["advert", "advert feature", "feature"],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "advert-feature.php"
+	},
+	"align": "full"
+}

@@ -1,0 +1,13 @@
+{
+	"name": "acf/page-title",
+	"title": "Page Title",
+	"description": "",
+	"category": "widgets",
+	"icon": "tide",
+	"keywords": ["page title"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "page-title.php"
+	},
+	"align": "full"
+}

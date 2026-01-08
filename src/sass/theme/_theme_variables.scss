@@ -1,0 +1,167 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+
+/**************************************/
+/*                                    */
+/* !SASS Bootstrap Variables          */
+/*                                    */
+/**************************************/
+
+/**************************************/
+/* !Colours                           */
+/**************************************/
+
+$primary: #007064;
+$secondary: #324a46;
+$tertiary: #c9e3e1;
+
+$nhs-blue: #005EB8;
+$midtown: #5e9892;
+$grey: #f5f5f5;
+$gold: #d0b776;
+$highlight-red: #d96c5d;
+
+$white: #ffffff;
+$black: #000000;
+
+$shadow-color: #00000029;
+$bg-primary-opacity: rgba(0, 112, 100, 0.8);
+$bg-white-opacity: rgba(255, 255, 255, 0.2);
+
+$drop-shadow: 0px 3px 6px $shadow-color;
+
+$body-color: $secondary;
+$headings-color: $primary;
+
+/**************************************/
+/* !Spacing                           */
+/**************************************/
+
+$padding-x: 1rem;
+$padding-y: 0.8rem;
+
+/**************************************/
+/* !Grid */
+/**************************************/
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+	xxxl: 1600px,
+);
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1320px,
+	xxxl: 1600px,
+);
+
+$container-padding-x: 3rem;
+$headings-margin-bottom: 1.5rem;
+
+/**************************************/
+/* !Typography */
+/**************************************/
+
+$font-family-sans-serif: "objektiv-mk1", sans-serif;
+
+$font-size-base: 1rem;
+$font-size-xxl: $font-size-base * 8;
+$font-size-xl: $font-size-base * 1.9;
+$font-size-sm: $font-size-base * 0.85;
+$font-size-xs: $font-size-base * 0.75;
+
+$h1-font-size: $font-size-base * 3.625;
+$h2-font-size: $font-size-base * 2.5;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.125;
+$h5-font-size: $font-size-base * 1.063;
+$h6-font-size: $font-size-base * 1;
+$lead-font-size: $font-size-base * 1;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+$font-weight-base: $font-weight-regular;
+$lead-font-weight: $font-weight-medium;
+
+/**************************************/
+/* !Buttons                           */
+/**************************************/
+
+$btn-border-width: 0;
+$btn-line-height: 1.25;
+
+/**************************************/
+/* !Forms                             */
+/**************************************/
+
+$input-padding-x: 1rem;
+$input-padding-y: 0.55rem;
+
+/**************************************/
+/* !Transitions                       */
+/**************************************/
+
+$transition-duration: 0.3s;
+$transition-timing: ease-in-out;
+
+/**************************************/
+/*                                    */
+/* !CSS Variables                     */
+/*                                    */
+/**************************************/
+
+:root {
+	--primary: #007064;
+	--secondary: #324a46;
+	--tertiary: #c9e3e1;
+
+	--nhs-blue: #005EB8;
+	--midtown: #5e9892;
+	--grey: #f5f5f5;
+	--gold: #d0b776;
+	--highlight-red: #d96c5d;
+
+	--white: #ffffff;
+	--black: #000000;
+
+	--shadow-color: #00000029;
+	--bg-primary-opacity: rgba(0, 112, 100, 0.8);
+	--bg-white-opacity: rgba(255, 255, 255, 0.2);
+
+	--bs-body-font-size: 0.875rem!important;
+
+	--spacer: 5rem;
+	--spacer-sm: 2rem;
+	--spacer-md: 3rem;
+	--spacer-lg: 7rem;
+}
+
+/**************************************/
+/* !Pagination Blog                   */
+/**************************************/
+
+$pagination-color: var(--primary);
+$pagination-bg: transparent;
+$pagination-border-radius: 0;
+$pagination-border-width: 1px;
+$pagination-border-color: var(--primary);
+
+$pagination-hover-border-color: var(--primary);
+$pagination-hover-color: var(--white);
+$pagination-hover-bg: var(--primary);
+
+$pagination-active-border-color: var(--grey);
+$pagination-active-color: var(--grey);
+$pagination-active-bg: rgba(54, 181, 179, 0.051);
