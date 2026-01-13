@@ -45,7 +45,6 @@ if ( ! function_exists( 'echo_setup' ) ) {
 		register_nav_menus(
 			array(
 				'primary' => __( 'Primary Menu', 'understrap' ),
-				'members-menu' => __( 'Members Menu', 'understrap' ),
 			)
 		);
 

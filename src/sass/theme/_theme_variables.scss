@@ -19,8 +19,6 @@ $tertiary: #3f3e3e;
 $grey: #efefef;
 $highlight: #e8f5ec;
 
-$nhs-blue: #005eb8;
-$midtown: #5e9892;
 $gold: #d0b776;
 
 $highlight-red: #d96c5d;
@@ -33,8 +31,8 @@ $bg-white-opacity: rgba(255, 255, 255, 0.2);
 
 $drop-shadow: 0px 3px 6px $shadow-color;
 
-$body-color: $secondary;
-$headings-color: $primary;
+$body-color: $tertiary;
+$headings-color: $tertiary;
 
 /**************************************/
 /* !Spacing                           */
@@ -73,7 +71,7 @@ $headings-margin-bottom: 1.5rem;
 /* !Typography */
 /**************************************/
 
-$font-family-sans-serif: "objektiv-mk1", sans-serif;
+$font-family-sans-serif: "Open Sans", sans-serif;
 
 $font-size-base: 1rem;
 $font-size-xxl: $font-size-base * 8;
@@ -81,21 +79,19 @@ $font-size-xl: $font-size-base * 1.9;
 $font-size-sm: $font-size-base * 0.85;
 $font-size-xs: $font-size-base * 0.75;
 
-$h1-font-size: $font-size-base * 3.625;
-$h2-font-size: $font-size-base * 2.5;
-$h3-font-size: $font-size-base * 1.75;
+$h1-font-size: $font-size-base * 2.75;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.5;
 $h4-font-size: $font-size-base * 1.125;
 $h5-font-size: $font-size-base * 1.063;
 $h6-font-size: $font-size-base * 1;
 $lead-font-size: $font-size-base * 1;
 
-$font-weight-light: 300;
 $font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-bold: 600;
+$font-weight-bold: 700;
 
 $font-weight-base: $font-weight-regular;
-$lead-font-weight: $font-weight-medium;
+$lead-font-weight: $font-weight-bold;
 
 /**************************************/
 /* !Buttons                           */
@@ -132,8 +128,6 @@ $transition-timing: ease-in-out;
 	--grey: #efefef;
 	--highlight: #e8f5ec;
 
-	--nhs-blue: #005eb8;
-	--midtown: #5e9892;
 	--gold: #d0b776;
 
 	--highlight-red: #d96c5d;
