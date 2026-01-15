@@ -14797,6 +14797,10 @@ hr {
   font-size: 1.25rem;
   font-weight: 700;
 }
+.site-footer__primary .footer-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
 
 .site-footer__menu {
   display: flex;

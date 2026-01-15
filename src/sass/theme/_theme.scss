@@ -150,7 +150,6 @@
 .icon-menu:before {
 	content: "\e90b";
 }
-
 .icon-cross:before {
 	content: "\e90c";
 }
@@ -1247,6 +1246,11 @@ hr {
 				}
 			}
 		}
+	}
+
+	.footer-heading {
+		font-size: 1.25rem;
+		font-weight: $font-weight-bold;
 	}
 
 	.footer-heading {
