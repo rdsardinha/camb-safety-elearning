@@ -1,0 +1,13 @@
+{
+	"name": "acf/courses-grid",
+	"title": "Courses Grid",
+	"description": "",
+	"category": "widgets",
+	"icon": "tide",
+	"keywords": ["courses", "grid"],
+	"acf": {
+		"mode": "edit",
+		"renderTemplate": "courses-grid.php"
+	},
+	"align": "full"
+}

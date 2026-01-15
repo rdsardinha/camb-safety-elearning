@@ -1,9 +1,9 @@
 {
-    "key": "group_6794d209c2fcb",
-    "title": "Block: Text Image Block",
+    "key": "group_6968d45ecafe1",
+    "title": "Block: Homepage Introduction Block",
     "fields": [
         {
-            "key": "field_6794d209dd65d",
+            "key": "field_6968d45ed0d7a",
             "label": "Heading",
             "name": "heading_text_image",
             "aria-label": "",
@@ -24,7 +24,7 @@
             "append": ""
         },
         {
-            "key": "field_6794d209d2804",
+            "key": "field_6968d45ed1bb3",
             "label": "Heading Size",
             "name": "heading_size_image",
             "aria-label": "",
@@ -55,7 +55,7 @@
             "save_options": 0
         },
         {
-            "key": "field_6794d209e1376",
+            "key": "field_6968d45ed57d4",
             "label": "Subheading",
             "name": "subheading_text_image",
             "aria-label": "",
@@ -76,7 +76,7 @@
             "new_lines": ""
         },
         {
-            "key": "field_6813849a9fe50",
+            "key": "field_6968d45ed916c",
             "label": "Subheading Size",
             "name": "subheading_size_image",
             "aria-label": "",
@@ -107,7 +107,7 @@
             "save_options": 0
         },
         {
-            "key": "field_6794d232eaf89",
+            "key": "field_6968d45eda1fd",
             "label": "Image",
             "name": "image_text_image",
             "aria-label": "",
@@ -133,7 +133,7 @@
             "preview_size": "thumbnail"
         },
         {
-            "key": "field_6794d24aeaf8a",
+            "key": "field_6968d45edddc7",
             "label": "Image Position",
             "name": "position_image_text_image",
             "aria-label": "",
@@ -162,7 +162,7 @@
             "save_options": 0
         },
         {
-            "key": "field_6823520e33e6d",
+            "key": "field_6968d45ee19f2",
             "label": "Vertical Aligment",
             "name": "vertical_aligment_text_image",
             "aria-label": "",
@@ -191,7 +191,7 @@
             "save_options": 0
         },
         {
-            "key": "field_6794d209e87f2",
+            "key": "field_6968d45ee378f",
             "label": "Content",
             "name": "content_text_image",
             "aria-label": "",
@@ -212,7 +212,7 @@
             "delay": 1
         },
         {
-            "key": "field_6794d209ec408",
+            "key": "field_6968d45ee70e0",
             "label": "Buttons",
             "name": "buttons_text_image",
             "aria-label": "",
@@ -234,7 +234,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6794d20a0eb4c",
+                    "key": "field_6968d45ef241f",
                     "label": "Link",
                     "name": "link",
                     "aria-label": "",
@@ -249,10 +249,10 @@
                     },
                     "return_format": "array",
                     "allow_in_bindings": 1,
-                    "parent_repeater": "field_6794d209ec408"
+                    "parent_repeater": "field_6968d45ee70e0"
                 },
                 {
-                    "key": "field_6794d20a127fb",
+                    "key": "field_6968d45f01bc6",
                     "label": "Theme",
                     "name": "theme",
                     "aria-label": "",
@@ -279,7 +279,7 @@
                     "placeholder": "",
                     "create_options": 0,
                     "save_options": 0,
-                    "parent_repeater": "field_6794d209ec408"
+                    "parent_repeater": "field_6968d45ee70e0"
                 }
             ]
         }
@@ -289,7 +289,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/text-image-block"
+                "value": "acf\/homepage-introduction-block"
             }
         ]
     ],
@@ -303,5 +303,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1768472678
+    "modified": 1768477940
 }

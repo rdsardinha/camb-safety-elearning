@@ -67,7 +67,7 @@ add_shortcode('email-address', 'email_address_shortcode');
 function email_address_shortcode()
 {
 	$email_address = get_field('options_email_address', 'option') ?: '';
-	$output = '<div class="global-email"><a class="" href="mailto:' . $email_address . '"><i class="icon-email"></i><span>' . $email_address . '</span></a></div>';
+	$output = '<div class="global-email"><a class="" href="mailto:' . $email_address . '"><i class="icon-message"></i><span>' . $email_address . '</span></a></div>';
 	return $output;
 }
 
@@ -86,35 +86,35 @@ function phone_number_shortcode()
 /**************************************/
 /* !- Social Media [shortcode]        */
 /**************************************/
-add_shortcode('social-media', 'social_media_shortcode');
-function social_media_shortcode()
-{
-	ob_start();
+// add_shortcode('social-media', 'social_media_shortcode');
+// function social_media_shortcode()
+// {
+// 	ob_start();
 
-	get_template_part('templates/shortcodes/social-media-block', null);
+// 	get_template_part('templates/shortcodes/social-media-block', null);
 
-	$output = ob_get_contents();
-	ob_end_clean();
+// 	$output = ob_get_contents();
+// 	ob_end_clean();
 
-	return $output;
-}
+// 	return $output;
+// }
 
 /**************************************/
-/* !- Social Media [shortcode]        */
+/* !- Button CTA [shortcode]        */
 /**************************************/
-add_shortcode('buttons-cta', 'buttons_cta_shortcode');
-function buttons_cta_shortcode()
-{
-	$patience_link = get_field('patience_link', 'option') ?: '#';
-	$nhs_link = get_field('nhs_link', 'option') ?: '#';
+// add_shortcode('buttons-cta', 'buttons_cta_shortcode');
+// function buttons_cta_shortcode()
+// {
+// 	$patience_link = get_field('patience_link', 'option') ?: '#';
+// 	$nhs_link = get_field('nhs_link', 'option') ?: '#';
 
-	$output = '
-	<div class="block-buttons">
-		<a class="btn btn--primary btn--small" href="' . esc_url($patience_link) . '">Private Care</a>
-		<!-- <a class="btn btn--nhs-blue btn--small btn--nhs-button-support" href="' . esc_url($nhs_link) . '" target="_blank">
-			<span class="btn--nhs-button"></span>Referrals
-		</a> -->
-	</div>';
+// 	$output = '
+// 	<div class="block-buttons">
+// 		<a class="btn btn--primary btn--small" href="' . esc_url($patience_link) . '">Private Care</a>
+// 		<!-- <a class="btn btn--nhs-blue btn--small btn--nhs-button-support" href="' . esc_url($nhs_link) . '" target="_blank">
+// 			<span class="btn--nhs-button"></span>Referrals
+// 		</a> -->
+// 	</div>';
 
-	return $output;
-}
+// 	return $output;
+// }

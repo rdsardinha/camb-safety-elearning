@@ -279,36 +279,6 @@
                     "parent_repeater": "field_6794c8d315f7f"
                 },
                 {
-                    "key": "field_68de6533e1224",
-                    "label": "Size",
-                    "name": "size",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "normal": "Normal",
-                        "small": "Small"
-                    },
-                    "default_value": false,
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "allow_in_bindings": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "create_options": 0,
-                    "save_options": 0,
-                    "parent_repeater": "field_6794c8d315f7f"
-                },
-                {
                     "key": "field_6794c8e815f81",
                     "label": "Theme",
                     "name": "theme",
@@ -360,5 +330,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1760366355
+    "modified": 1768472668
 }

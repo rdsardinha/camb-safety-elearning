@@ -36,15 +36,11 @@
   --tertiary: #3f3e3e;
   --grey: #efefef;
   --highlight: #e8f5ec;
-  --nhs-blue: #005eb8;
-  --midtown: #5e9892;
-  --gold: #d0b776;
   --highlight-red: #d96c5d;
   --white: #ffffff;
   --black: #000000;
   --shadow-color: #00000029;
-  --bg-primary-opacity: rgba(0, 112, 100, 0.8);
-  --bg-white-opacity: rgba(255, 255, 255, 0.2);
+  --bg-white-opacity: rgba(255, 255, 255, 0.9);
   --bs-body-font-size: 0.875rem !important;
   --spacer: 5rem;
   --spacer-sm: 2rem;
@@ -93,33 +89,33 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 1.5rem;
   font-weight: 500;
   line-height: 1.2;
-  color: #159d45;
+  color: #3f3e3e;
 }
 
 h1, .h1 {
-  font-size: calc(1.4875rem + 2.85vw);
+  font-size: calc(1.4rem + 1.8vw);
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 3.625rem;
+    font-size: 2.75rem;
   }
 }
 
 h2, .h2 {
-  font-size: calc(1.375rem + 1.5vw);
+  font-size: calc(1.325rem + 0.9vw);
 }
 @media (min-width: 1200px) {
   h2, .h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 h3, .h3 {
-  font-size: calc(1.3rem + 0.6vw);
+  font-size: calc(1.275rem + 0.3vw);
 }
 @media (min-width: 1200px) {
   h3, .h3 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -174,7 +170,7 @@ ul ol {
 }
 
 dt {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 dd {
@@ -500,16 +496,16 @@ progress {
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-body-color-rgb: 46, 106, 50;
+  --bs-body-color-rgb: 63, 62, 62;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: "objektiv-mk1", sans-serif;
+  --bs-font-sans-serif: "Open Sans", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #2e6a32;
+  --bs-body-color: #3f3e3e;
   --bs-body-bg: #ffffff;
   --bs-border-width: 1px;
   --bs-border-style: solid;
@@ -789,7 +785,7 @@ progress {
 
 .lead {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .display-1 {
@@ -2179,15 +2175,15 @@ progress {
 }
 
 .fs-1 {
-  font-size: calc(1.4875rem + 2.85vw) !important;
+  font-size: calc(1.4rem + 1.8vw) !important;
 }
 
 .fs-2 {
-  font-size: calc(1.375rem + 1.5vw) !important;
+  font-size: calc(1.325rem + 0.9vw) !important;
 }
 
 .fs-3 {
-  font-size: calc(1.3rem + 0.6vw) !important;
+  font-size: calc(1.275rem + 0.3vw) !important;
 }
 
 .fs-4 {
@@ -2223,7 +2219,7 @@ progress {
 }
 
 .fw-bold {
-  font-weight: 600 !important;
+  font-weight: 700 !important;
 }
 
 .fw-semibold {
@@ -5544,13 +5540,13 @@ progress {
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 3.625rem !important;
+    font-size: 2.75rem !important;
   }
   .fs-2 {
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
   }
   .fs-3 {
-    font-size: 1.75rem !important;
+    font-size: 1.5rem !important;
   }
 }
 @media print {
@@ -5995,7 +5991,7 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
 }
 
 .editor-post-title .editor-post-title__input {
-  font-size: 3.625rem;
+  font-size: 2.75rem;
   font-weight: 500;
 }
 

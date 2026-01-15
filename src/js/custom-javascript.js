@@ -26,6 +26,18 @@
 		$("body").css("overflow", ""); // Restore scroll
 	});
 
+	$(".has-dropdown-menu").each(function () {
+		const $menuItem = $(this);
+		const $toggle = $menuItem.find(".dropdown-toggle");
+		const $menu = $menuItem.find(".dropdown-menu");
+
+		if ($toggle.length && $menu.length) {
+			$menuItem.addClass("show");
+			$toggle.attr("aria-expanded", "true");
+			$menu.addClass("show");
+		}
+	});
+
 	// Fetch all the details element.
 	const details = document.querySelectorAll("details");
 
@@ -39,18 +51,6 @@
 				}
 			});
 		});
-	});
-
-	// Add text in location text bar
-	$("#wpsl-search-input").attr("placeholder", "Enter a postcode");
-
-	// Remove Pagination
-	$(document).on("facetwp-loaded", function () {
-		if ($(".facetwp-pager .facetwp-page").length === 0) {
-			$(".facetwp-pager").addClass("no-pager");
-		} else {
-			$(".facetwp-pager").removeClass("no-pager");
-		}
 	});
 
 	/**************************************/
@@ -353,39 +353,4 @@ document.addEventListener("DOMContentLoaded", function () {
 		field.addEventListener("change", toggleClass);
 		field.addEventListener("blur", toggleClass);
 	});
-});
-
-/* Resize Text */
-document.addEventListener("DOMContentLoaded", function () {
-	const buttons = document.querySelectorAll(".text-size-btn");
-	const root = document.documentElement;
-	const savedSize = localStorage.getItem("textSize") || "medium";
-
-	// Apply saved size on load
-	applyTextSize(savedSize);
-
-	buttons.forEach((btn) => {
-		btn.addEventListener("click", () => {
-			const size = btn.dataset.size;
-			applyTextSize(size);
-			localStorage.setItem("textSize", size);
-		});
-	});
-
-	function applyTextSize(size) {
-		buttons.forEach((b) => b.classList.remove("active"));
-		document.querySelector(`[data-size="${size}"]`).classList.add("active");
-
-		switch (size) {
-			case "small":
-				root.style.fontSize = "90%";
-				break;
-			case "medium":
-				root.style.fontSize = "100%";
-				break;
-			case "large":
-				root.style.fontSize = "115%";
-				break;
-		}
-	}
 });

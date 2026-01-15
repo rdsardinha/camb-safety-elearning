@@ -1,0 +1,13 @@
+{
+	"name": "acf/homepage-introduction-block",
+	"title": "Homepage Introduction Block",
+	"description": "Text with image block for homepage",
+	"category": "widgets",
+	"icon": "text-page",
+	"keywords": ["text", "block", "homepage", "introduction"],
+	"acf": {
+		"mode": "editor",
+		"renderTemplate": "homepage-introduction-block.php"
+	},
+	"align": "full"
+}

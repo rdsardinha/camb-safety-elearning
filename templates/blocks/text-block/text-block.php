@@ -64,12 +64,11 @@ if ($content) {
 								<?php
 								$link = get_sub_field('link');
 								$theme = get_sub_field('theme');
-								$size = get_sub_field('size');
 								if (empty($link)) {
 									break;
 								}
 
-								echo sprintf('<a class="btn btn--%1$s btn--%5$s" href="%2$s" target="%3$s">%4$s</a>', $theme, $link['url'], $link['target'], $link['title'], $size);
+								echo sprintf('<a class="btn btn--%1$s" href="%2$s" target="%3$s">%4$s</a>', $theme, $link['url'], $link['target'], $link['title']);
 
 								?>
 							<?php endwhile; ?>
