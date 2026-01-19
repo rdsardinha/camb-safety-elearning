@@ -32,6 +32,7 @@ $echo_theme_includes = array(
 	'/shortcodes.php',                      // Library of shortcodes
 	'/blocks.php',                          // ACF Blocks
 	'/mega_menu.php',                       // Mega Menu Shortcode
+	'/learnpress-functions.php',                          // ACF Blocks
 );
 
 // Load WooCommerce functions if WooCommerce is activated.

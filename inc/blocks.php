@@ -25,6 +25,7 @@ function register_acf_blocks()
 		'divider-block',
 		'homepage-introduction-block',
 		'courses-grid-block',
+		'contact-us-block',
 	);
 
 	foreach ($blocks as $block) {

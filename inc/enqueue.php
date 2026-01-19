@@ -31,11 +31,7 @@ if (!function_exists('understrap_scripts')) {
 			understrap_offcanvas_admin_bar_inline_styles();
 		}
 
-		wp_enqueue_style('tinyslider_css', get_template_directory_uri() . '/css/tiny-slider.css');
-
 		wp_enqueue_script('jquery');
-
-		wp_enqueue_script('tinyslider_js', get_template_directory_uri() . '/js/tiny-slider.js', array('jquery'));
 
 		$js_version = $theme_version . '.' . filemtime(get_template_directory() . $theme_scripts); // @phpstan-ignore-line -- file exists
 		wp_enqueue_script('understrap-scripts', get_template_directory_uri() . $theme_scripts, array(), $js_version, true);

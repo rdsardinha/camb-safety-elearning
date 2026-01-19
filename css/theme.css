@@ -13132,7 +13132,7 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   top: 83px;
   left: 0;
   right: 0;
-  box-shadow: 0 999px 0 999px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 999px 0 999px rgba(0, 0, 0, 0.5);
 }
 .dropdown-menu.echo-menu-shortcode .mega-menu-image {
   width: 100%;
@@ -13313,12 +13313,6 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   .dropdown-menu.echo-menu-shortcode .header-menu p {
     font-size: 1.25rem;
     font-weight: 700;
-  }
-}
-@media (max-height: 850px) {
-  .menu_style_2 .menu-content {
-    height: 90vh !important;
-    overflow-y: scroll;
   }
 }
 /*
@@ -13686,7 +13680,7 @@ figure.woocommerce-product-gallery__wrapper {
 /**************************************/
 /* !- Icon Font                       */
 /**************************************/
-.course-card a::after, .modal-content .btn-close::after, .contact-select-col span::after,
+.accordion__item .accordion__question::before, .course-card a::after, .modal-content .btn-close::after, .contact-select-col span::after,
 [class^=icon-],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -13936,6 +13930,13 @@ h6,
     max-width: calc(100vw - 4rem);
   }
 }
+@media (max-width: 575.98px) {
+  .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl, .container-xxxl {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: calc(100vw - 2rem);
+  }
+}
 
 figure {
   margin-bottom: 0;
@@ -13945,9 +13946,11 @@ figure {
   overflow-x: clip;
 }
 
-.site-main {
-  overflow-x: clip;
-  background: url(../images/bg-body.svg);
+.site-main,
+.lp-archive-courses,
+.lp-single-course {
+  overflow-x: hidden;
+  background: url(../images/body-background.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14545,7 +14548,7 @@ hr {
 /**************************************/
 /* !- Transitions                     */
 /**************************************/
-.accordion__item::after, .course-card .course-image img, .course-card a::after, .block__main-menu .navbar-brand img, .block__main-menu, .btn::before, .wpcf7 input[type=submit]::before, .woocommerce-notices-wrapper .woocommerce-message a.button::before, .woocommerce-info a.button::before, .account-link::before, body .cky-btn::before {
+.accordion__item .accordion__question::before, .course-card .course-image img, .course-card a::after, .block__main-menu .navbar-brand img, .block__main-menu, .btn::before, .wpcf7 input[type=submit]::before, .woocommerce-notices-wrapper .woocommerce-message a.button::before, .woocommerce-info a.button::before, .account-link::before, body .cky-btn::before {
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
@@ -14670,6 +14673,10 @@ hr {
   gap: 1rem;
 }
 @media (max-width: 575.98px) {
+  .block__main-menu {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
   .block__main-menu li {
     padding: 0 1rem;
   }
@@ -14682,12 +14689,6 @@ hr {
   .block__main-menu .main-menu .global-phone a i {
     font-size: 1.5rem;
     margin-right: 0;
-  }
-}
-@media (max-width: 575.98px) {
-  .block__main-menu {
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
   }
 }
 
@@ -14724,7 +14725,7 @@ hr {
 /* !Footer                            */
 /**************************************/
 .site-footer__primary {
-  background: url(../images/bg-footer.svg) no-repeat;
+  background: url(../images/bg-footer.png) no-repeat;
   background-position: 75%;
   background-size: contain;
   border-top: 1px solid var(--grey);
@@ -14796,10 +14797,7 @@ hr {
 .site-footer__primary .footer-heading {
   font-size: 1.25rem;
   font-weight: 700;
-}
-.site-footer__primary .footer-heading {
-  font-size: 1.25rem;
-  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .site-footer__menu {
@@ -15015,6 +15013,11 @@ hr {
 .page-header-block__header .text-block__header h1, .page-header-block__header .text-block__header .h1 {
   margin-bottom: 0;
 }
+@media (max-width: 575.98px) {
+  .page-header-block__header .text-block__header {
+    max-width: calc(100vw - 2rem);
+  }
+}
 .page-header-block__header .text-block__header::before {
   content: "";
   position: absolute;
@@ -15031,7 +15034,7 @@ hr {
 /* !Advert CTA                        */
 /**************************************/
 .advert-cta {
-  background: url(../images/bg-advert.svg);
+  background: url(../images/bg-advert.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -15086,65 +15089,46 @@ details summary::marker {
   content: none;
 }
 
-.accordion__item {
-  position: relative;
-  border-bottom: 1px solid var(--primary);
-}
-.accordion__item .accordion__question {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary);
-  padding: 35px 30px;
-}
-@media (max-width: 575.98px) {
-  .accordion__item .accordion__question {
-    padding-right: 60px;
-  }
-}
-.accordion__item::after {
-  content: "";
-  position: absolute;
-  right: 30px;
-  top: 2rem;
-  width: 40px;
-  height: 40px;
-  background-image: url("../images/nav-left.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: background-image;
-  pointer-events: none;
-  rotate: 270deg;
-}
-@media (max-width: 575.98px) {
-  .accordion__item::after {
-    width: 30px;
-    height: 30px;
-  }
-}
-.accordion__item:hover {
-  background-color: var(--grey);
-}
-.accordion__item:hover::after {
-  background-image: url("../images/nav-left-hover.svg");
+.accordion-block img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
-.accordion__item[open] {
-  background-color: var(--grey);
+.accordion__item {
+  margin-bottom: 1rem;
 }
-.accordion__item[open]::after {
-  background-image: url("../images/nav-left.svg");
-  rotate: 90deg;
+.accordion__item .accordion__question {
+  font-size: 1.125rem;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  position: relative;
+  background-color: var(--primary);
+  color: var(--white);
 }
-.accordion__item[open]:hover::after {
-  background-image: url("../images/nav-left-hover.svg");
+.accordion__item .accordion__question::before {
+  content: "\e908";
+  font-size: 0.5rem;
+  position: absolute;
+  top: 47%;
+  left: 13px;
+  transform: rotate(0deg);
+  transition-property: transform;
+}
+@media (max-width: 767.98px) {
+  .accordion__item .accordion__question {
+    font-size: 1rem;
+  }
+}
+
+.accordion__item[open] .accordion__question::before {
+  transform: rotate(180deg);
 }
 
 .accordion__answer {
-  padding: 0 35px 30px;
-}
-.accordion__answer .block-buttons {
-  margin-top: 1rem;
+  background-color: var(--highlight);
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--primary);
 }
 
 /**************************************/
@@ -15177,7 +15161,7 @@ details summary::marker {
 }
 
 .text-block__subheading {
-  color: var(--secondary);
+  color: var(--tertiary);
   font-weight: 300;
   font-size: 1.125rem;
 }
@@ -15268,5 +15252,56 @@ details summary::marker {
   -o-object-fit: cover;
   object-fit: cover;
 }
+
+/**************************************/
+/* !Contact Us                        */
+/**************************************/
+.contact-us-block {
+  background-color: var(--highlight);
+}
+.contact-us-block img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.contact-line__item {
+  display: flex;
+  flex-direction: row;
+  gap: 1.875rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.contact-line__item .icon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.contact-line__item .icon i {
+  font-size: 1.5rem;
+}
+.contact-line__item .lead {
+  color: var(--secondary);
+  margin-bottom: 0.2rem;
+}
+.contact-line__item p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 767.98px) {
+  .contact-line__item {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+/**************************************/
+/* !Learn Press                       */
+/**************************************/
 
 /*# sourceMappingURL=theme.css.map */

@@ -9,7 +9,7 @@
 	top: 83px;
 	left: 0;
 	right: 0;
-	box-shadow: 0 999px 0 999px rgba(0, 0, 0, 0.75);
+	box-shadow: 0 999px 0 999px rgba(0, 0, 0, 0.5);
 
 	.mega-menu-image {
 		width: 100%;
@@ -215,12 +215,5 @@
 	.dropdown-menu.echo-menu-shortcode .header-menu p {
 		font-size: 1.25rem;
 		font-weight: $font-weight-bold;
-	}
-}
-
-@media (max-height: 850px) {
-	.menu_style_2 .menu-content {
-		height: 90vh !important;
-		overflow-y: scroll;
 	}
 }
