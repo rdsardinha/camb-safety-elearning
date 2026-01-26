@@ -297,9 +297,9 @@ if ( ! function_exists( 'understrap_loop_add_to_cart_args' ) ) {
 				$args['class'] = implode( ' ', $args['class'] );
 			}
 
-			$args['class'] .= ' btn btn-outline-primary';
+			$args['class'] .= ' btn btn--primary';
 		} else {
-			$args['class'] = 'btn btn-outline-primary';
+			$args['class'] = 'btn btn--primary';
 		}
 
 		if ( 'bootstrap4' === get_theme_mod( 'understrap_bootstrap_version', 'bootstrap4' ) ) {

@@ -1,15 +1,16 @@
 .sticky-top .dropdown-menu.echo-menu-shortcode {
-	top: 61px;
+	top: 60px;
 }
 
 .dropdown-menu.echo-menu-shortcode {
 	border: 0;
 	padding: 0;
 	border-radius: 0;
-	top: 83px;
+	top: 82px;
 	left: 0;
 	right: 0;
 	box-shadow: 0 999px 0 999px rgba(0, 0, 0, 0.5);
+	border-top: 1px solid var(--grey);
 
 	.mega-menu-image {
 		width: 100%;

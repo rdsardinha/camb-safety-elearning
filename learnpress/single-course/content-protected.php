@@ -24,7 +24,7 @@ if ( ! is_user_logged_in() ) {
 			'learnpress'
 		),
 		sprintf(
-			'<a class="lp-link-login" href="%s">%s</a>',
+			'<a class="lp-link-login" href="/my-account">login</a>',
 			learn_press_get_login_url( LP_Helper::getUrlCurrent() ),
 			__( 'login', 'learnpress' )
 		),

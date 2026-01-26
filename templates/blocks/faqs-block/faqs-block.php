@@ -104,27 +104,27 @@ $i = 1;
 		$i = 1;
 		?>
 		<script type="application/ld+json">
-							{
-								"@context": "https://schema.org",
-								"@type": "FAQPage",
-								"mainEntity": [
-									<?php while (have_rows('questions')):
-										the_row('questions'); ?>
-																			{
-																				"@type": "Question",
-																				"name": "<?php echo get_sub_field('question'); ?>",
-																					"acceptedAnswer": {
-																					"@type": "Answer",
-																					"text": "<?php echo esc_attr(wp_strip_all_tags(get_sub_field('answer'))); ?>"
-																				}
-																			}
-																			<?php if ($i < count($count)) {
-																				echo ',';
-																				$i++;
-																			} ?>
-									<?php endwhile; ?>
-								]
-							}
-						</script>
+								{
+									"@context": "https://schema.org",
+									"@type": "FAQPage",
+									"mainEntity": [
+										<?php while (have_rows('questions')):
+											the_row('questions'); ?>
+																					{
+																						"@type": "Question",
+																						"name": "<?php echo get_sub_field('question'); ?>",
+																							"acceptedAnswer": {
+																							"@type": "Answer",
+																							"text": "<?php echo esc_attr(wp_strip_all_tags(get_sub_field('answer'))); ?>"
+																						}
+																					}
+																					<?php if ($i < count($count)) {
+																						echo ',';
+																						$i++;
+																					} ?>
+										<?php endwhile; ?>
+									]
+								}
+							</script>
 	<?php endif; ?>
 </div>

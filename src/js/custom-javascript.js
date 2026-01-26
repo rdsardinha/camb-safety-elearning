@@ -92,3 +92,4 @@ document.querySelectorAll('[data-bs-toggle="pill"]').forEach((tab) => {
 		setTimeout(checkVisibility, 150);
 	});
 });
+

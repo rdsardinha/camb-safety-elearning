@@ -53,133 +53,90 @@ function wc_prevent_clickjacking()
 	header('X-FRAME-OPTIONS: SAMEORIGIN');
 }
 
-add_filter('wpsl_admin_marker_dir', 'custom_admin_marker_dir');
+/* Prevent link sharing work */
+add_action('init', function () {
 
-function custom_admin_marker_dir()
-{
+    // Rewrite rule for /media/{filename}
+    add_rewrite_rule(
+        '^media/([^/]+)$',
+        'index.php?secure_media_slug=$matches[1]',
+        'top'
+    );
 
-	$admin_marker_dir = get_stylesheet_directory() . '/wpsl-markers/';
-
-	return $admin_marker_dir;
-}
-
-define('WPSL_MARKER_URI', dirname(get_bloginfo('stylesheet_url')) . '/wpsl-markers/');
-
-// Add a new column to the Service Categories admin
-add_filter('manage_edit-service_category_columns', function ($columns) {
-	$new_columns = array();
-	$new_columns['cb'] = $columns['cb']; // keep the checkbox
-	$new_columns['thumbnail'] = 'Thumbnail'; // new column
-	unset($columns['cb']); // remove original checkbox to avoid duplicates
-	return array_merge($new_columns, $columns);
 });
 
-// Display the thumbnail in the new column
-add_action('manage_service_category_custom_column', function ($content, $column_name, $term_id) {
-	if ($column_name === 'thumbnail') {
-		$image = get_field('thumbnail', 'service_category_' . $term_id);
-		if ($image) {
-			$content = wp_get_attachment_image($image, 'small', false, array('class' => 'img-fluid', 'loading' => 'lazy'));
-		} else {
-			$content = '—';
-		}
-	}
-	return $content;
-}, 10, 3);
-
-add_filter('manage_edit-service_category_sortable_columns', function ($columns) {
-	$columns['thumbnail'] = false; // not sortable, just display
-	return $columns;
+add_filter('query_vars', function ($vars) {
+    $vars[] = 'secure_media_slug';
+    return $vars;
 });
 
-add_filter('wpseo_breadcrumb_links', function ($links) {
+add_action('template_redirect', function () {
 
-	global $post;
+    $slug = get_query_var('secure_media_slug');
+    if (!$slug) return;
 
-	if (is_page() && !is_front_page()) {
+    if (!is_user_logged_in()) {
+        $redirect = home_url('/my-account/?redirect_to=' . urlencode($_SERVER['REQUEST_URI']));
+        wp_safe_redirect($redirect);
+        exit;
+    }
 
-		$parents = get_post_ancestors($post->ID);
-		if (!empty($parents)) {
-			$parents = array_reverse($parents);
-			$new_links = [];
+    // Find attachment by filename (without path)
+    global $wpdb;
+    $attachment_id = $wpdb->get_var(
+        $wpdb->prepare(
+            "SELECT ID FROM $wpdb->posts WHERE post_type='attachment' AND guid LIKE %s LIMIT 1",
+            '%' . $wpdb->esc_like($slug)
+        )
+    );
 
-			// Keep Home link (Yoast adds this first)
-			$new_links[] = $links[0];
+    if (!$attachment_id) {
+        wp_die('File not found', 'Error', ['response' => 404]);
+    }
 
-			// Add parent pages
-			foreach ($parents as $parent_id) {
-				$new_links[] = [
-					'url' => get_permalink($parent_id),
-					'text' => get_the_title($parent_id),
-				];
-			}
+    $file = get_attached_file($attachment_id);
 
-			// Add current page (last item)
-			$new_links[] = end($links);
+    if (!$file || !file_exists($file)) {
+        wp_die('File not found', 'Error', ['response' => 404]);
+    }
 
-			$links = $new_links;
-		}
-	}
+    $allowed_mimes = [
+        'application/pdf' => 'inline',
+        'application/msword' => 'attachment',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document' => 'attachment',
+    ];
 
-	if (is_tax('service_category')) {
+    $mime = get_post_mime_type($attachment_id);
 
-		$term = get_queried_object();
+    if (!isset($allowed_mimes[$mime])) {
+        wp_die('File type not allowed', 'Error', ['response' => 403]);
+    }
 
-		$new_links = [];
-		$new_links[] = $links[0]; // Home
+    $filename = basename($file);
 
-		// Add main Services archive
-		$new_links[] = [
-			'url' => get_post_type_archive_link('echo_services'),
-			'text' => 'Services',
-		];
+    header('Content-Type: ' . $mime);
+    header('Content-Disposition: ' . $allowed_mimes[$mime] . '; filename="' . $filename . '"');
+    header('Content-Length: ' . filesize($file));
+    header('Cache-Control: private, no-store');
 
-		// Add parent categories (if any)
-		$ancestors = get_ancestors($term->term_id, 'service_category');
-		$ancestors = array_reverse($ancestors);
+    readfile($file);
+    exit;
 
-		foreach ($ancestors as $ancestor_id) {
-			$ancestor = get_term($ancestor_id, 'service_category');
-			$new_links[] = [
-				'url' => get_term_link($ancestor),
-				'text' => $ancestor->name,
-			];
-		}
-
-		// Add current taxonomy
-		$new_links[] = [
-			'url' => get_term_link($term),
-			'text' => $term->name,
-		];
-
-		$links = $new_links;
-	}
-
-	return $links;
 });
 
+add_filter('wp_get_attachment_url', function ($url, $attachment_id) {
 
-add_filter('post_type_link', function ($post_link, $post) {
-	if ($post->post_type === 'echo_services') {
-		$terms = wp_get_post_terms($post->ID, 'service_category');
-		if (!empty($terms) && !is_wp_error($terms)) {
-			$term = $terms[0];
-			$ancestors = get_ancestors($term->term_id, 'service_category');
-			$ancestors = array_reverse($ancestors);
+    $allowed_mimes = [
+        'application/pdf',
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    ];
 
-			$slug_parts = [];
-			foreach ($ancestors as $ancestor) {
-				$ancestor_term = get_term($ancestor, 'service_category');
-				$slug_parts[] = $ancestor_term->slug;
-			}
-			$slug_parts[] = $term->slug;
+    if (!in_array(get_post_mime_type($attachment_id), $allowed_mimes, true)) {
+        return $url;
+    }
 
-			$taxonomy_path = implode('/', $slug_parts);
-			$post_link = str_replace('%service_category%', $taxonomy_path, $post_link);
-		} else {
-			$post_link = str_replace('%service_category%', '', $post_link);
-		}
-	}
-	return $post_link;
+    $filename = basename(get_attached_file($attachment_id));
+    return home_url('/media/' . $filename);
+
 }, 10, 2);
-

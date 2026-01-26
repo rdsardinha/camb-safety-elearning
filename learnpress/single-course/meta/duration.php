@@ -15,5 +15,5 @@ $course = learn_press_get_course();
 $duration_str = SingleCourseTemplate::instance()->html_duration( $course );
 ?>
 
-<div class="meta-item meta-item-duration"><?php echo $duration_str; ?></div>
+<div class="meta-item meta-item-duration">Duration:<?php echo $duration_str; ?></div>
 

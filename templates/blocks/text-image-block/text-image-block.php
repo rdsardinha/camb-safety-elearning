@@ -25,6 +25,8 @@ $acf_image = get_field('image_text_image');
 $position_image = get_field('position_image_text_image');
 $vertical_aligment_text_image = get_field('vertical_aligment_text_image');
 
+$block_size = get_field('block_size');
+
 $auxClass = "flex-wrap";
 $auxaMargin = 'mb-0';
 $auxaVertical = 'align-items-center';
@@ -44,7 +46,7 @@ if ($content) {
 
 <div class="text-block text-image-block block block--margin">
 	<div class="row justify-content-center">
-		<div class="col-12 col-lg-10">
+		<div class="<?php echo $block_size ?>">
 			<div class="row gx-5 <?php echo $auxaVertical . ' ' . $auxClass ?>">
 				<div class="col-12 col-lg-6 order-2 order-lg-0 mt-5 mt-lg-0">
 					<?php if ($heading) { ?>

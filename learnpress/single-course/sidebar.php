@@ -47,11 +47,5 @@ if ( ! is_active_sidebar( 'course-sidebar' ) && ! LearnPress::instance()->templa
 
 			?>
 		</div>
-
-		<?php if ( is_active_sidebar( 'course-sidebar' ) ) : ?>
-			<div class="course-sidebar-secondary">
-				<?php dynamic_sidebar( 'course-sidebar' ); ?>
-			</div>
-		<?php endif; ?>
 	</div>
 </aside>

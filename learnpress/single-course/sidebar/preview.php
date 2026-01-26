@@ -5,29 +5,38 @@
  * @version 4.0.1
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 ?>
 
-<div class="course-sidebar-preview">
+<div class="course-sidebar-preview lp-course-preview">
 	<div class="media-preview">
 		<?php
-		LearnPress::instance()->template( 'course' )->course_media_preview();
-		learn_press_get_template( 'loop/course/badge-featured' );
+		LearnPress::instance()->template('course')->course_media_preview();
+		learn_press_get_template('loop/course/badge-featured');
 		?>
 	</div>
 
 	<?php
-	// Price box.
-	LearnPress::instance()->template( 'course' )->course_pricing();
 
-	// Graduation.
-	LearnPress::instance()->template( 'course' )->course_graduation();
+	// Progress
+	LearnPress::instance()->template('course')->user_progress();
 
-	// Buttons.
-	LearnPress::instance()->template( 'course' )->course_buttons();
+	?>
 
-	LearnPress::instance()->template( 'course' )->user_time();
+	<div class="course-meta__pull-left">
 
-	LearnPress::instance()->template( 'course' )->user_progress();
+		<?php
+		/**
+		 * LP Hook
+		 */
+		do_action('learn-press/course-meta-secondary-left');
+		?>
+
+	</div>
+
+	<?php
+
+	// Buttons
+	LearnPress::instance()->template('course')->course_buttons();
 	?>
 </div>
