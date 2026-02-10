@@ -13,44 +13,44 @@ $echo_theme_inc_dir = 'inc';
 
 // Array of files to include.
 $echo_theme_includes = array(
-	'/theme-settings.php',                  // Initialize theme default settings.
-	'/setup.php',                           // Theme setup and custom theme supports.
-	'/cpt.php',                             // Register custom post types.
-	'/wp-overrides.php',                    // Override default Wordpress functions & settings
-	'/plugin-overrides.php',                // Override plugin functions & settings
-	'/widgets.php',                         // Register widget area.
-	'/enqueue.php',                         // Enqueue scripts and styles.
-	'/template-tags.php',                   // Custom template tags for this theme.
-	'/pagination.php',                      // Custom pagination for this theme.
-	'/hooks.php',                           // Custom hooks.
-	'/extras.php',                          // Custom functions that act independently of the theme templates.
-	'/customizer.php',                      // Customizer additions.
-	'/custom-comments.php',                 // Custom Comments file.
-	'/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker. Trying to get deeper navigation? Check out: https://github.com/understrap/understrap/issues/567.
-	'/editor.php',                          // Load Editor functions.
-	'/block-editor.php',                    // Load Block Editor functions.
-	'/shortcodes.php',                      // Library of shortcodes
-	'/blocks.php',                          // ACF Blocks
-	'/mega_menu.php',                       // Mega Menu Shortcode
-	'/learnpress-functions.php',                          // ACF Blocks
+    '/theme-settings.php',                  // Initialize theme default settings.
+    '/setup.php',                           // Theme setup and custom theme supports.
+    '/cpt.php',                             // Register custom post types.
+    '/wp-overrides.php',                    // Override default Wordpress functions & settings
+    '/plugin-overrides.php',                // Override plugin functions & settings
+    '/widgets.php',                         // Register widget area.
+    '/enqueue.php',                         // Enqueue scripts and styles.
+    '/template-tags.php',                   // Custom template tags for this theme.
+    '/pagination.php',                      // Custom pagination for this theme.
+    '/hooks.php',                           // Custom hooks.
+    '/extras.php',                          // Custom functions that act independently of the theme templates.
+    '/customizer.php',                      // Customizer additions.
+    '/custom-comments.php',                 // Custom Comments file.
+    '/class-wp-bootstrap-navwalker.php',    // Load custom WordPress nav walker. Trying to get deeper navigation? Check out: https://github.com/understrap/understrap/issues/567.
+    '/editor.php',                          // Load Editor functions.
+    '/block-editor.php',                    // Load Block Editor functions.
+    '/shortcodes.php',                      // Library of shortcodes
+    '/blocks.php',                          // ACF Blocks
+    '/mega_menu.php',                       // Mega Menu Shortcode
+    '/learnpress-functions.php',                          // ACF Blocks
 );
 
 // Load WooCommerce functions if WooCommerce is activated.
 if (class_exists('WooCommerce')) {
-	$echo_theme_includes[] = '/wc-overrides.php'; // Override default WooCommerce functions & settings
-	$echo_theme_includes[] = '/woocommerce.php'; // WooCommerce functions
+    $echo_theme_includes[] = '/wc-overrides.php'; // Override default WooCommerce functions & settings
+    $echo_theme_includes[] = '/woocommerce.php'; // WooCommerce functions
 }
 
 // Include files.
 foreach ($echo_theme_includes as $file) {
-	require_once get_theme_file_path($echo_theme_inc_dir . $file);
+    require_once get_theme_file_path($echo_theme_inc_dir . $file);
 }
 
 /* Clickjacking protection - Add header to stop site loading in an iFrame */
 add_action('send_headers', 'wc_prevent_clickjacking', 10);
 function wc_prevent_clickjacking()
 {
-	header('X-FRAME-OPTIONS: SAMEORIGIN');
+    header('X-FRAME-OPTIONS: SAMEORIGIN');
 }
 
 /* Prevent link sharing work */
@@ -73,7 +73,8 @@ add_filter('query_vars', function ($vars) {
 add_action('template_redirect', function () {
 
     $slug = get_query_var('secure_media_slug');
-    if (!$slug) return;
+    if (!$slug)
+        return;
 
     if (!is_user_logged_in()) {
         $redirect = home_url('/my-account/?redirect_to=' . urlencode($_SERVER['REQUEST_URI']));

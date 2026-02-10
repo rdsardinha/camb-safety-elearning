@@ -1,7 +1,7 @@
 /* Enhance materials */
 document.addEventListener("DOMContentLoaded", () => {
 	const currentLessonEl = document.querySelector(
-		".course-curriculum .course-item.current"
+		".course-curriculum .course-item.current",
 	);
 	const lessonId = currentLessonEl?.dataset.itemId;
 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function initMaterialLogic(table) {
 		const completeForm = document.querySelector(
-			'form.learn-press-form.form-button[name="learn-press-form-complete-lesson"]'
+			'form.learn-press-form.form-button[name="learn-press-form-complete-lesson"]',
 		);
 		if (!completeForm) return;
 
@@ -68,7 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
 				checkbox.dataset.materialId = `lesson-${lessonId}-material-0`;
 
 				const label = document.createElement("label");
-				label.textContent = "By checking this box, you confirm that you have viewed or downloaded all materials for this lesson.";
+				label.textContent =
+					"By checking this box, you confirm that you have viewed or downloaded all materials for this lesson.";
 				label.style.marginLeft = "8px";
 				label.style.width = "80%";
 
@@ -129,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function toggleComplete() {
 		const completeForm = document.querySelector(
-			'form.learn-press-form.form-button[name="learn-press-form-complete-lesson"]'
+			'form.learn-press-form.form-button[name="learn-press-form-complete-lesson"]',
 		);
 		if (!completeForm) return;
 
@@ -143,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		completeForm.style.display = allDone ? "block" : "none";
 	}
 });
-
 
 // document.addEventListener("DOMContentLoaded", () => {
 // 	/**
